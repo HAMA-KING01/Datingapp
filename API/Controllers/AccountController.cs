@@ -3,6 +3,7 @@ using System.Security.Cryptography;
 using System.Text;
 using API.Data;
 using API.DTOs;
+using API.Extensions;
 using API.Entities;
 using API.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -30,13 +31,8 @@ public class AccountController(AppDbContext context, ITokenService tokenService)
         context.Users.Add(user);
         await context.SaveChangesAsync();
         
-        return new UserDto
-        {
-            Id = user.Id,
-            DisplayNmae = user.DisplayNmae,
-            Email = user.Email,
-            Token = tokenService.CreateToken(user)
-        };
+        return  user.ToDto(tokenService);
+        
     }
 
     [HttpPost("login")]
@@ -53,13 +49,7 @@ public class AccountController(AppDbContext context, ITokenService tokenService)
             if (ComputeHash[i] != user.passwordHash[i]) return Unauthorized("InvalidCastException password");
         }
 
-        return new UserDto
-        {
-            Id = user.Id,
-            DisplayNmae = user.DisplayNmae,
-            Email = user.Email,
-            Token = tokenService.CreateToken(user)
-        };
+        return  user.ToDto(tokenService);
     }
     
     private async Task<bool> EmailExists(string email)
