@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Kn2yuAAxoNo=",
+  "dgSpecHash": "yhR4XLZKdls=",
   "success": true,
-  "projectFilePath": "C:\\Users\\hamak\\DatingApp\\API\\API.csproj",
+  "projectFilePath": "C:\\Users\\hamak\\DatingApp\\api\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hamak\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\hamak\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\9.0.7\\microsoft.aspnetcore.authentication.jwtbearer.9.0.7.nupkg.sha512",
@@ -60,15 +60,5 @@
     "C:\\Users\\hamak\\.nuget\\packages\\system.text.json\\9.0.7\\system.text.json.9.0.7.nupkg.sha512",
     "C:\\Users\\hamak\\.nuget\\packages\\system.threading.channels\\7.0.0\\system.threading.channels.7.0.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1900",
-      "level": "Warning",
-      "message": "Error occurred while getting package vulnerability data: Unable to load the service index for source https://api.nuget.org/v3/index.json.",
-      "projectPath": "C:\\Users\\hamak\\DatingApp\\API\\API.csproj",
-      "warningLevel": 1,
-      "filePath": "C:\\Users\\hamak\\DatingApp\\API\\API.csproj",
-      "targetGraphs": []
-    }
-  ]
+  "logs": []
 }
