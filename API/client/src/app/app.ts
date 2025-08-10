@@ -6,15 +6,18 @@ import { AccountService } from '../core/service/account-service';
 import { joinAllInternals } from 'rxjs/internal/operators/joinAllInternals';
 import { Home } from "../features/home/home";
 import { User } from '../types/user';
+import { Router, RouterOutlet } from '@angular/router';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [Nav, Home],
+  imports: [Nav, RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
 export class App implements OnInit {
   private accountService = inject(AccountService);
+  protected router = inject(Router);
   private http = inject(HttpClient);
   protected title = 'Dating app';
   protected members = signal<User[]>([]);

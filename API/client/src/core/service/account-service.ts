@@ -13,7 +13,7 @@ export class AccountService {
   baseUrl = 'http://localhost:5264/api/';
 
   register(creds: RegisterCreds) {
-    return this.http.post<User>(this.baseUrl + 'account/login', creds).pipe(
+    return this.http.post<User>(this.baseUrl + 'account/register', creds).pipe(
       tap((user) => {
         if (user) {
           if (user) {
