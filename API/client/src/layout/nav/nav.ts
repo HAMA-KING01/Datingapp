@@ -6,7 +6,7 @@ import { ToastService } from '../../core/service/toast-service';
 
 @Component({
   selector: 'app-nav',
-  imports: [FormsModule, RouterLink,RouterLinkActive],
+  imports: [FormsModule, RouterLink, RouterLinkActive],
   templateUrl: './nav.html',
   styleUrl: './nav.css',
 })
@@ -19,20 +19,21 @@ export class Nav {
 
   login() {
     this.accountService.login(this.cards).subscribe({
-      next: (result) => {
+      next: () => {
         this.router.navigateByUrl('/members');
-        this.toast.success('logged in successfully')
+        this.toast.success('logged in successfully');
         this.cards = {};
       },
       error: (error) => {
         this.toast.error(error.error);
-      }
-    })
+      },
+    });
   }
 
   logout() {
     this.accountService.logout();
-    this.router.navigateByUrl('/');
+    this.toast.success('logged out successfully');
 
+    this.router.navigateByUrl('/');
   }
 }
